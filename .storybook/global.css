@@ -1,0 +1,95 @@
+/* Ignore SB Backgrounds */
+.sbdocs-wrapper.sbdocs-wrapper {
+  background: transparent;
+}
+
+/* Use default fonts from SB if none provided */
+* {
+  font-family: "Nunito Sans",-apple-system,".SFNSText-Regular","San Francisco",BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.sbdocs {
+  /* Override default text styles */
+  .sb-unstyled:is(.sbdocs-title, .sbdocs-wrapper),
+  *:is(h1, h2, h3, h4, h5, h6, p) {
+    color: var(--text-main);
+  }
+
+  *:is(h1, h2, h3, h4, h5, h6, p),
+  *:is(hr) {
+    border-color: var(--border-main);
+  }
+
+  &.sbdocs-preview.sb-unstyled {
+    background: hsl(from var(--background-paper) h s l / 0.5);
+    .docblock-code-toggle {
+      background: var(--background-paper);
+      border: none;
+      color: var(--text-main);
+    }
+    *:has(> .docblock-code-toggle) {
+      background: transparent;
+    }
+  }
+
+}
+
+.docblock-argstable.sb-unstyled {
+  --color: var(--text-main);
+  --border: var(--border-main);
+  --background: var(--background-main);
+  --accents: var(--background-paper);
+  thead tr th {
+    color: var(--color);
+  }
+  tbody.docblock-argstable-body {
+    color: var(--color);
+    & > tr {
+      border-color: var(--border);
+      & > *:is(td) {
+        background: var(--background);
+        color: var(--color);
+        border-color: var(--border);
+        & *:is(div > div > span, select) {
+          background: var(--accents);
+          border-color: var(--border);
+          color: var(--text-lighter);
+        }
+        & select {
+          box-shadow: var(--accents) 0 0 0 1px inset;
+        }
+      }
+    }
+  }
+}
+
+.docblock-colorpalette.sb-unstyled {
+  & > div {
+    color: var(--text-main);
+    &:first-of-type {
+      color: var(--text-lighter);
+    }
+    & > div {
+      > div:nth-of-type(1) {
+        color: var(--text-lighter);
+      }
+      > div:nth-of-type(2) {
+        color: var(--text-light);
+      }
+    }
+    & > div:nth-child(2) > div {
+      > div:nth-child(1) {
+        box-shadow: hsl(from var(--background-paper) h s l / 0.1) 0 1px 3px 0;
+        border: solid 1px hsl(from var(--border-paper) h s l / 0.3);
+      }
+      > div:nth-child(2) {
+        > div > div {
+          color: var(--text-lighter);
+        }
+        span {
+          display: none;
+        }
+      }
+    }  
+  }
+}

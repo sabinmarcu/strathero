@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, Controls, ColorPalette, ColorItem } from '@storybook/blocks';
+import { SplitScreen, DetailsSummaryStyle } from './colors.css';
+import * as ColorShowcase from './colors.stories';
+import { ShowcasePaletteNameMapping } from './colors';
+import { ThemeContract } from './core/contract';
+
+# Color Palettes
+
+<Meta of={ColorShowcase} />
+
+In this section, you'll get to play around with the color palettes of this theme system.
+Hopefully, the next interactive part will show you how things look like!
+
+<Story of={ColorShowcase.Demo} />
+<Controls of={ColorShowcase.Demo} />
+
+## Palette Showcase
+
+These are the currently available color palettes.
+
+<ColorPalette>
+  {Object.entries(ShowcasePaletteNameMapping).map(([palette, description]) => (
+    <ColorItem
+      title={`theme.colors.${palette}`}
+      subtitle={description}
+      colors={ThemeContract.colors[palette]}
+    />
+  ))}
+</ColorPalette>
+
+## Variant Comparison
+
+<details>
+  <summary className={DetailsSummaryStyle}>
+    Below you can see the two variants side-by-side (if you're on a Desktop, that is)
+  </summary>
+
+  <section className={SplitScreen}>
+    <div>
+      ## Light Variant
+      <Story of={ColorShowcase.LightVariant} />
+    </div>
+    <div>
+      ## Dark Variant
+      <Story of={ColorShowcase.DarkVariant} />
+    </div>
+  </section>
+</details>

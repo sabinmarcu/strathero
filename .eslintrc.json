@@ -1,0 +1,42 @@
+{
+  "extends": [
+    "@sabinmarcu",
+    "next/core-web-vitals"
+  ],
+  "parserOptions": {
+    "project": "tsconfig.json"
+  },
+  "rules": {
+    "unicorn/expiring-todo-comments": 0
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.spec.ts",
+        "*.spec.tsx"
+      ],
+      "rules": {
+        "import/no-extraneous-dependencies": [
+          "error",
+          {
+            "devDependencies": true
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.stories.{ts,tsx}",
+        "**/components/*.{ts,tsx}"
+      ],
+      "rules": {
+        "unicorn/filename-case": [
+          0,
+          {
+            "case": "pascalCase"
+          }
+        ]
+      }
+    }
+  ]
+}
