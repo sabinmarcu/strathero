@@ -77,7 +77,6 @@ export const ColorSectionTitle = style({
   display: 'flex',
   flexFlow: 'row nowrap',
   alignItems: 'center',
-  color: ThemeContract.colors.text.main,
   padding: `calc(${ColorSectionPadding} * 0.8) ${ColorSectionPadding} calc(${ColorSectionPadding} * 0.7) ${ColorSectionPadding}`,
   borderBottom: `solid 1px ${ThemeContract.colors.border.paper}`,
 });
@@ -88,7 +87,7 @@ globalStyle(`${ColorSectionTitle} span`, {
   padding: '0.2em 0.3em',
   border: `solid 1px ${ThemeContract.colors.border.paper}`,
   background: ThemeContract.colors.background.main,
-  color: ThemeContract.colors.text.lighter,
+  color: ThemeContract.colors.text.main,
   borderRadius: 10,
 });
 
