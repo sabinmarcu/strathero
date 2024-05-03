@@ -110,12 +110,12 @@ export const Demo: StoryObj<typeof InteractiveShowcase> = {
   render: (properties) => (<InteractiveShowcase {...properties} />),
   tags: ['hideInSidebar'],
   args: {
-    theme: 'dark',
+    theme: 'global' as any,
     palette: 'primary',
   },
   argTypes: {
     theme: {
-      options: Object.keys(themeVariants),
+      options: ['global', ...Object.keys(themeVariants)],
       control: {
         type: 'select',
       },
